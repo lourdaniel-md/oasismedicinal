@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Oásis Medicinal — Portal de comunicação médica criado por Daniel dos Santos Lourenço, M.D. Casos clínicos, actualização médica e educação para a saúde desde Pemba, Moçambique.">
+<meta name="keywords" content="medicina, saúde, casos clínicos, Moçambique, Pemba, Cabo Delgado, cardiologia, obstetrícia, traumatologia">
+<meta name="author" content="Daniel dos Santos Lourenço, M.D.">
+<meta property="og:title" content="Oásis Medicinal — Portal de Comunicação Médica">
+<meta property="og:description" content="Casos clínicos, actualização médica e educação para a saúde. Criado por Daniel dos Santos Lourenço, M.D., Pemba, Moçambique.">
+<meta property="og:url" content="https://oasismedicinal.github.io">
+<meta property="og:type" content="website">
+<title>Oásis Medicinal — Daniel dos Santos Lourenço, M.D.</title>
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- ============================================================
+     GOOGLE ADSENSE — Substituir ca-pub-XXXXXXXXXXXXXXXX
+     pelo seu Publisher ID após aprovação em:
+     https://www.google.com/adsense
+     ============================================================ -->
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+
+<style>
+/* ============================================================
+   RESET & VARIÁVEIS
+   ============================================================ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --green:       #1a5c3a;
+  --green-mid:   #236b45;
+  --green-light: #e8f5ee;
+  --green-pale:  #f2faf5;
+  --gold:        #b8860b;
+  --gold-light:  #fdf8e8;
+  --rust:        #8b3a1a;
+  --rust-light:  #fdf0ea;
+  --purple:      #6b3fa0;
+  --purple-light:#f0eafb;
+  --orange:      #e65100;
+  --orange-light:#fff3e0;
+  --navy:        #1a2740;
+  --text:        #1e2d1f;
+  --text-muted:  #5a6e5c;
+  --border:      #ccddd0;
+  --bg:          #f5faf6;
+  --white:       #ffffff;
+  --ad-bg:       #f8f9fa;
+  --ad-border:   #e0e0e0;
+  --serif:       'Lora', Georgia, 'Times New Roman', serif;
+  --sans:        'Inter', system-ui, -apple-system, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.7;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+
+/* ============================================================
+   AD UNITS
+   ============================================================ */
+.ad-unit {
+  background: var(--ad-bg);
+  border: 1px dashed var(--ad-border);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  color: #bbb;
+  font-size: 12px;
+}
+.ad-label {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: #ccc;
+  margin-bottom: 6px;
+}
+/* Leaderboard 728×90 */
+.ad-leaderboard { width: 100%; height: 90px; }
+/* Rectangle 300×250 */
+.ad-rect { width: 100%; height: 250px; margin-bottom: 20px; }
+/* In-content */
+.ad-incontent { width: 100%; height: 90px; margin: 24px 0; }
+/* Para inserir AdSense real, substituir o conteúdo .ad-unit por:
+   <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXX"
+        data-ad-slot="YYYY" data-ad-format="auto" data-full-width-responsive="true"></ins>
+   <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+*/
+
+/* ============================================================
+   TOPBAR
+   ============================================================ */
+.topbar {
+  background: var(--green);
+  color: rgba(255,255,255,.85);
+  font-size: 11.5px;
+  padding: 7px 24px;
+  text-align: center;
+  letter-spacing: .04em;
+}
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+nav {
+  background: var(--white);
+  border-bottom: 1.5px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 66px;
+  gap: 16px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.logo-emblem {
+  width: 42px; height: 42px;
+  background: var(--green);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+.logo-title {
+  font-family: var(--serif);
+  font-size: 18px;
+  color: var(--green);
+  font-weight: 600;
+  line-height: 1.1;
+  font-style: italic;
+}
+.logo-tagline {
+  font-size: 10px;
+  color: var(--text-muted);
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+.nav-links {
+  display: flex;
+  gap: 2px;
+  flex-wrap: wrap;
+}
+.nav-links a {
+  padding: 7px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: all .15s;
+  white-space: nowrap;
+}
+.nav-links a:hover,
+.nav-links a.active { background: var(--green-light); color: var(--green); }
+.nav-cta {
+  background: var(--green);
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.nav-cta:hover { background: var(--green-mid); }
+
+/* hamburger — mobile */
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; }
+.hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; }
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  background: var(--green);
+  color: #fff;
+  padding: 64px 24px 56px;
+  position: relative;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+.hero-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 48px;
+  align-items: center;
+  position: relative;
+}
+.hero-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.2);
+  color: rgba(255,255,255,.9);
+  font-size: 11px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin-bottom: 18px;
+}
+.hero h1 {
+  font-family: var(--serif);
+  font-size: 42px;
+  line-height: 1.18;
+  margin-bottom: 14px;
+  font-style: italic;
+}
+.hero h1 strong { font-style: normal; color: #a8e6bf; }
+.hero-motto {
+  color: rgba(255,255,255,.75);
+  font-size: 14.5px;
+  line-height: 1.75;
+  margin-bottom: 28px;
+  font-style: italic;
+  border-left: 3px solid rgba(255,255,255,.25);
+  padding-left: 14px;
+}
+.hero-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+.btn-w {
+  background: #fff; color: var(--green);
+  padding: 11px 22px; border-radius: 8px;
+  font-weight: 600; text-decoration: none; font-size: 13.5px;
+  transition: opacity .15s;
+}
+.btn-w:hover { opacity: .9; }
+.btn-o {
+  background: transparent; color: rgba(255,255,255,.9);
+  padding: 11px 22px; border-radius: 8px;
+  font-weight: 500; text-decoration: none; font-size: 13.5px;
+  border: 1px solid rgba(255,255,255,.3);
+  transition: all .15s;
+}
+.btn-o:hover { border-color: #fff; color: #fff; }
+.hero-stats {
+  display: flex; gap: 28px;
+  margin-top: 32px; padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,.15);
+}
+.hstat .n { font-family: var(--serif); font-size: 24px; color: #fff; font-weight: 600; }
+.hstat .l { font-size: 11px; color: rgba(255,255,255,.6); margin-top: 2px; }
+
+/* Featured panel */
+.feat-panel {
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 16px;
+  overflow: hidden;
+}
+.feat-top { padding: 20px 22px 16px; border-bottom: 1px solid rgba(255,255,255,.1); }
+.feat-badge { font-size: 10.5px; text-transform: uppercase; letter-spacing: .09em; color: #a8e6bf; margin-bottom: 10px; font-weight: 600; }
+.feat-title { font-family: var(--serif); font-size: 17px; color: #fff; line-height: 1.4; margin-bottom: 8px; font-style: italic; }
+.feat-excerpt { font-size: 12.5px; color: rgba(255,255,255,.65); line-height: 1.65; }
+.feat-bottom { padding: 14px 22px; display: flex; align-items: center; justify-content: space-between; }
+.feat-author { display: flex; align-items: center; gap: 8px; }
+.av {
+  width: 30px; height: 30px; border-radius: 50%;
+  background: var(--gold); display: flex; align-items: center;
+  justify-content: center; font-size: 11px; font-weight: 600; color: #fff; flex-shrink: 0;
+}
+.feat-author-name { font-size: 12px; color: #fff; font-weight: 500; }
+.feat-author-role { font-size: 11px; color: rgba(255,255,255,.55); }
+.feat-read { font-size: 11.5px; color: #a8e6bf; text-decoration: none; font-weight: 500; }
+.feat-read:hover { text-decoration: underline; }
+
+/* ============================================================
+   CATEGORIES BAR
+   ============================================================ */
+.cats-bar { background: var(--white); border-bottom: 1px solid var(--border); }
+.cats-scroll {
+  max-width: 1120px; margin: 0 auto; padding: 0 24px;
+  display: flex; overflow-x: auto; scrollbar-width: none;
+}
+.cats-scroll::-webkit-scrollbar { display: none; }
+.cat-btn {
+  display: flex; align-items: center; gap: 7px;
+  padding: 14px 18px; font-size: 13px; font-weight: 500;
+  color: var(--text-muted); cursor: pointer;
+  border-right: 1px solid var(--border);
+  text-decoration: none; white-space: nowrap;
+  transition: all .15s; flex-shrink: 0;
+}
+.cat-btn:hover, .cat-btn.active { color: var(--green); background: var(--green-pale); }
+
+/* AdSense strip */
+.ad-strip {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding: 8px 24px;
+  display: flex; justify-content: center;
+}
+.ad-strip-inner {
+  background: var(--ad-bg); border: 1px dashed var(--ad-border);
+  border-radius: 8px; height: 72px; width: 100%; max-width: 728px;
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: 4px;
+}
+.ad-strip-inner span { font-size: 11px; color: #ccc; }
+
+/* ============================================================
+   MAIN LAYOUT
+   ============================================================ */
+.main-wrap {
+  max-width: 1120px; margin: 0 auto;
+  padding: 40px 24px;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 36px;
+  align-items: start;
+}
+.section-label {
+  font-size: 10.5px; text-transform: uppercase;
+  letter-spacing: .12em; color: var(--green);
+  font-weight: 600; margin-bottom: 5px;
+}
+.section-title {
+  font-family: var(--serif); font-size: 24px;
+  color: var(--navy); margin-bottom: 20px; font-style: italic;
+}
+
+/* ============================================================
+   ARTICLE CARDS
+   ============================================================ */
+.article-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  overflow: hidden;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 18px;
+  transition: box-shadow .2s, transform .2s;
+}
+.article-card:hover {
+  box-shadow: 0 6px 24px rgba(26,92,58,.1);
+  transform: translateY(-1px);
+}
+.card-stripe { height: 4px; }
+.card-body { padding: 18px 20px 16px; }
+.card-top {
+  display: flex; align-items: center;
+  gap: 8px; margin-bottom: 9px; flex-wrap: wrap;
+}
+.tag {
+  display: inline-block; font-size: 10px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: .07em;
+  padding: 3px 9px; border-radius: 20px;
+}
+.tag-casos    { background: var(--gold-light);    color: var(--gold); }
+.tag-cardio   { background: var(--green-light);   color: var(--green); }
+.tag-obstet   { background: var(--rust-light);    color: var(--rust); }
+.tag-curiosidade { background: var(--purple-light); color: var(--purple); }
+.tag-trauma   { background: var(--orange-light);  color: var(--orange); }
+.tag-psico    { background: var(--purple-light);  color: var(--purple); }
+.card-date { font-size: 11px; color: var(--text-muted); margin-left: auto; }
+.card-title {
+  font-family: var(--serif); font-size: 17px;
+  color: var(--navy); margin-bottom: 7px;
+  line-height: 1.38; font-style: italic;
+}
+.card-excerpt {
+  font-size: 13px; color: var(--text-muted);
+  line-height: 1.7; margin-bottom: 12px;
+}
+.card-footer {
+  display: flex; align-items: center;
+  justify-content: space-between;
+  padding-top: 10px; border-top: 1px solid var(--border);
+}
+.card-author {
+  display: flex; align-items: center;
+  gap: 7px; font-size: 11.5px; color: var(--text-muted);
+}
+.av-sm { width: 22px; height: 22px; font-size: 9px; }
+.card-read {
+  font-size: 12px; color: var(--green);
+  font-weight: 600; text-decoration: none;
+}
+.card-read:hover { text-decoration: underline; }
+
+/* Sponsored card */
+.sponsored-card {
+  background: linear-gradient(135deg, #fffbf0, #fef9e7);
+  border: 1px solid #e8d5a0;
+  border-radius: 13px;
+  padding: 18px 20px;
+  margin-bottom: 18px;
+  position: relative;
+}
+.sponsored-label {
+  position: absolute; top: 10px; right: 12px;
+  font-size: 9px; text-transform: uppercase; letter-spacing: .1em;
+  color: #b8960b; background: #fdf3c0;
+  padding: 2px 8px; border-radius: 20px; font-weight: 600;
+}
+.sponsored-card h4 {
+  font-family: var(--serif); font-size: 15px;
+  color: var(--navy); margin-bottom: 5px; font-style: italic;
+}
+.sponsored-card p { font-size: 12.5px; color: var(--text-muted); margin-bottom: 10px; }
+.sponsored-btn {
+  display: inline-block; background: var(--gold); color: #fff;
+  font-size: 12px; font-weight: 600; padding: 7px 14px;
+  border-radius: 6px; text-decoration: none;
+}
+.sponsored-btn:hover { background: #9a6f09; }
+
+/* ============================================================
+   SIDEBAR
+   ============================================================ */
+.sidebar-section {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 13px; padding: 18px; margin-bottom: 18px;
+}
+.sidebar-title {
+  font-family: var(--serif); font-size: 15px;
+  color: var(--navy); margin-bottom: 12px; font-style: italic;
+  border-bottom: 1px solid var(--border); padding-bottom: 9px;
+}
+.about-card { text-align: center; }
+.about-img {
+  width: 64px; height: 64px; border-radius: 50%;
+  background: var(--green-light); border: 3px solid var(--green);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif); font-size: 20px; color: var(--green);
+  font-weight: 600; margin: 0 auto 10px;
+}
+.about-name { font-family: var(--serif); font-size: 14.5px; color: var(--navy); font-style: italic; margin-bottom: 2px; }
+.about-role { font-size: 11.5px; color: var(--green); font-weight: 500; margin-bottom: 7px; }
+.about-bio { font-size: 12px; color: var(--text-muted); line-height: 1.6; }
+.sidebar-list { list-style: none; }
+.sidebar-list li { padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
+.sidebar-list li:last-child { border-bottom: none; padding-bottom: 0; }
+.sidebar-list a { color: var(--text); text-decoration: none; line-height: 1.4; display: block; }
+.sidebar-list a:hover { color: var(--green); }
+.slabel { font-size: 10.5px; color: var(--text-muted); display: block; margin-top: 2px; }
+.tag-cloud { display: flex; flex-wrap: wrap; gap: 6px; }
+.tc-tag {
+  font-size: 11.5px; padding: 4px 11px; border-radius: 20px;
+  background: var(--green-light); color: var(--green);
+  font-weight: 500; cursor: pointer; text-decoration: none;
+  transition: all .15s;
+}
+.tc-tag:hover { background: var(--green); color: #fff; }
+.promo-box {
+  background: var(--navy); border-radius: 13px;
+  padding: 18px; margin-bottom: 18px; text-align: center; color: #fff;
+}
+.promo-icon { font-size: 28px; margin-bottom: 8px; }
+.promo-box h4 { font-family: var(--serif); font-size: 15px; margin-bottom: 6px; font-style: italic; }
+.promo-box p { font-size: 12px; color: rgba(255,255,255,.7); margin-bottom: 12px; line-height: 1.6; }
+.promo-box a {
+  display: block; background: var(--green); color: #fff;
+  padding: 9px 14px; border-radius: 7px;
+  font-size: 12.5px; font-weight: 600; text-decoration: none;
+}
+.promo-box a:hover { background: var(--green-mid); }
+
+/* ============================================================
+   MONETISATION ROADMAP
+   ============================================================ */
+.monetisation-section {
+  background: var(--navy); padding: 52px 24px; color: #fff;
+}
+.mon-inner { max-width: 1120px; margin: 0 auto; }
+.mon-title { font-family: var(--serif); font-size: 28px; font-style: italic; margin-bottom: 6px; }
+.mon-sub { color: rgba(255,255,255,.7); font-size: 14px; margin-bottom: 32px; max-width: 560px; }
+.mon-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.mon-card {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 14px; padding: 22px 18px;
+}
+.mon-icon { font-size: 28px; margin-bottom: 12px; }
+.mon-card h4 { font-family: var(--serif); font-size: 16px; color: #fff; margin-bottom: 6px; font-style: italic; }
+.mon-card p { font-size: 12.5px; color: rgba(255,255,255,.65); line-height: 1.65; margin-bottom: 10px; }
+.mon-badge {
+  display: inline-block; font-size: 10px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: .07em;
+  padding: 3px 9px; border-radius: 20px;
+}
+.badge-active { background: rgba(168,230,191,.2); color: #a8e6bf; }
+.badge-medium { background: rgba(200,121,26,.2); color: #e0a96a; }
+.badge-soon   { background: rgba(255,255,255,.1); color: rgba(255,255,255,.6); }
+
+/* ============================================================
+   PATIENT SECTION
+   ============================================================ */
+.patient-section {
+  background: var(--white);
+  border-top: 1px solid var(--border);
+  padding: 52px 24px;
+}
+.patient-inner { max-width: 1120px; margin: 0 auto; }
+.patient-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 22px; }
+.patient-card {
+  background: var(--green-pale); border: 1px solid var(--border);
+  border-radius: 13px; padding: 18px 16px;
+  text-decoration: none; display: block; transition: all .2s;
+}
+.patient-card:hover {
+  background: var(--green-light);
+  border-color: rgba(26,92,58,.25);
+  transform: translateY(-2px);
+}
+.pc-icon { font-size: 26px; margin-bottom: 8px; }
+.pc-tag { font-size: 10px; text-transform: uppercase; letter-spacing: .08em; color: var(--green); font-weight: 600; margin-bottom: 5px; }
+.pc-title { font-family: var(--serif); font-size: 14px; color: var(--navy); line-height: 1.4; font-style: italic; }
+
+/* ============================================================
+   NEWSLETTER
+   ============================================================ */
+.nl { background: var(--green); color: #fff; padding: 52px 24px; text-align: center; }
+.nl h2 { font-family: var(--serif); font-size: 30px; margin-bottom: 8px; font-style: italic; }
+.nl p { color: rgba(255,255,255,.75); max-width: 460px; margin: 0 auto 24px; font-size: 14px; }
+.nl-form { display: flex; gap: 8px; max-width: 420px; margin: 0 auto 14px; }
+.nl-form input {
+  flex: 1; padding: 11px 16px; border-radius: 7px; border: none;
+  font-size: 14px; background: rgba(255,255,255,.12); color: #fff;
+  outline: none; border: 1px solid rgba(255,255,255,.2);
+}
+.nl-form input::placeholder { color: rgba(255,255,255,.4); }
+.nl-form button {
+  background: var(--navy); color: #fff; padding: 11px 20px;
+  border-radius: 7px; border: none; font-size: 13px;
+  font-weight: 600; cursor: pointer; white-space: nowrap;
+}
+.nl-form button:hover { background: #0f1e35; }
+.nl-note { font-size: 11px; color: rgba(255,255,255,.55); margin-bottom: 16px; }
+.disclaimer {
+  font-size: 11.5px; color: rgba(255,200,100,.85);
+  background: rgba(255,200,100,.07);
+  border: 1px solid rgba(255,200,100,.2);
+  border-radius: 7px; padding: 10px 16px;
+  max-width: 540px; margin: 0 auto;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer { background: var(--green); color: rgba(255,255,255,.75); padding: 44px 24px 24px; }
+.footer-inner { max-width: 1120px; margin: 0 auto; }
+.footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 40px; margin-bottom: 28px; }
+.footer-logo { font-family: var(--serif); font-size: 18px; color: #fff; font-style: italic; }
+.footer-brand p { font-size: 13px; line-height: 1.75; margin-top: 10px; max-width: 280px; }
+.footer-motto {
+  font-style: italic; font-size: 12px;
+  border-left: 2px solid rgba(255,255,255,.25);
+  padding-left: 10px; margin-top: 12px;
+  color: rgba(255,255,255,.6);
+}
+.footer-col h4 { color: #fff; font-size: 13px; font-weight: 600; margin-bottom: 12px; }
+.footer-col a { display: block; font-size: 12.5px; color: rgba(255,255,255,.65); text-decoration: none; margin-bottom: 7px; transition: color .15s; }
+.footer-col a:hover { color: #fff; }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,.15);
+  padding-top: 16px; display: flex;
+  justify-content: space-between; font-size: 11px;
+  flex-wrap: wrap; gap: 8px;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .feat-panel { display: none; }
+  .main-wrap { grid-template-columns: 1fr; }
+  .sidebar { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .mon-grid { grid-template-columns: 1fr 1fr; }
+  .patient-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .hero h1 { font-size: 30px; }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .nav-links.open {
+    display: flex; flex-direction: column;
+    position: absolute; top: 66px; left: 0; right: 0;
+    background: var(--white); border-bottom: 1px solid var(--border);
+    padding: 12px 24px; gap: 4px; z-index: 200;
+  }
+  .mon-grid { grid-template-columns: 1fr; }
+  .patient-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .sidebar { grid-template-columns: 1fr; }
+  .nl-form { flex-direction: column; }
+  .hero-stats { gap: 16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">🌿 Oásis Medicinal · Pemba, Cabo Delgado, Moçambique · Ciência médica acessível a todos</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">
+      <div class="logo-emblem">🌿</div>
+      <div>
+        <div class="logo-title">Oásis Medicinal</div>
+        <div class="logo-tagline">Portal de Comunicação Médica · Moçambique</div>
+      </div>
+    </a>
+    <div class="nav-links" id="nav-links">
+      <a href="#artigos" class="active">Início</a>
+      <a href="#casos">Casos Clínicos</a>
+      <a href="#especialidades">Por Especialidade</a>
+      <a href="#pacientes">Para Pacientes</a>
+      <a href="#sobre">Sobre</a>
+    </div>
+    <div class="hamburger" id="hamburger" onclick="document.getElementById('nav-links').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </div>
+    <a href="#newsletter" class="nav-cta">Newsletter</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-pill">⚕ Medicina · Ciência · Educação</div>
+      <h1>Um <strong>oásis</strong> de conhecimento médico em Moçambique</h1>
+      <div class="hero-motto">
+        "Para que se possa vencer os infortúnios, é importante, acima de tudo, que se tenha informação."
+      </div>
+      <div class="hero-btns">
+        <a href="#artigos" class="btn-w">Ver artigos</a>
+        <a href="#casos" class="btn-o">Casos Clínicos</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hstat"><div class="n">5+</div><div class="l">Artigos</div></div>
+        <div class="hstat"><div class="n">2</div><div class="l">Casos Clínicos</div></div>
+        <div class="hstat"><div class="n">4+</div><div class="l">Especialidades</div></div>
+        <div class="hstat"><div class="n">100%</div><div class="l">Conteúdo original</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="feat-panel">
+        <div class="feat-top">
+          <div class="feat-badge">📋 Caso Clínico em Destaque</div>
+          <div class="feat-title">Caso 002: Um parto distócico evitável — história clínica obstétrica completa</div>
+          <div class="feat-excerpt">Gestante de 24 anos, G VI P 3 Ab 2, com 40 semanas. Transferida do Hospital Geral de Quelimane. Raciocínio clínico detalhado e conduta.</div>
+        </div>
+        <div class="feat-bottom">
+          <div class="feat-author">
+            <div class="av">DL</div>
+            <div>
+              <div class="feat-author-name">Daniel dos Santos Lourenço, M.D.</div>
+              <div class="feat-author-role">Clínica Geral · Pemba, Cabo Delgado</div>
+            </div>
+          </div>
+          <a href="https://oasismedicinal.blogspot.com/2025/01/caso-002-um-parto-distocico-evitavel.html" class="feat-read" target="_blank" rel="noopener">Ler →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<div class="cats-bar">
+  <div class="cats-scroll">
+    <a href="#artigos" class="cat-btn active">🗂 Todos</a>
+    <a href="#casos" class="cat-btn">📋 Casos Clínicos</a>
+    <a href="#" class="cat-btn">🫀 Cardiologia</a>
+    <a href="#" class="cat-btn">🤰 Obstetrícia</a>
+    <a href="#" class="cat-btn">🧠 Psicologia</a>
+    <a href="#" class="cat-btn">🦴 Traumatologia</a>
+    <a href="#pacientes" class="cat-btn">🍏 Para Pacientes</a>
+    <a href="#" class="cat-btn">💡 Curiosidades</a>
+  </div>
+</div>
+
+<!-- AD LEADERBOARD -->
+<div class="ad-strip">
+  <div class="ad-strip-inner">
+    <span class="ad-label">Publicidade</span>
+    <!-- AdSense Leaderboard 728×90 — substituir bloco abaixo após aprovação:
+    <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px"
+         data-ad-client="ca-pub-XXXX" data-ad-slot="YYYY"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    -->
+    <span>Google AdSense 728×90 — activo após aprovação</span>
+  </div>
+</div>
+
+<!-- MAIN CONTENT + SIDEBAR -->
+<div class="main-wrap" id="artigos">
+  <!-- ARTICLES COLUMN -->
+  <div>
+    <div class="section-label">Artigos Recentes</div>
+    <div class="section-title">Publicações do Oásis Medicinal</div>
+
+    <!-- Artigo 1 -->
+    <a href="https://oasismedicinal.blogspot.com/2025/01/caso-002-um-parto-distocico-evitavel.html" class="article-card" target="_blank" rel="noopener" id="casos">
+      <div class="card-stripe" style="background: var(--rust);"></div>
+      <div class="card-body">
+        <div class="card-top">
+          <span class="tag tag-obstet">Obstetrícia</span>
+          <span class="tag tag-casos">Caso Clínico nº 002</span>
+          <span class="card-date">Jan 2025</span>
+        </div>
+        <div class="card-title">Um parto distócico evitável — Exemplo de uma história clínica obstétrica</div>
+        <div class="card-excerpt">Gestante de 24 anos, G VI P 3 Ab 2, com 40 semanas de gestação. Caso transferido do Hospital Geral de Quelimane com dor hipogástrica em cólica, irradiando para a região lombar, com perdas vaginais de aspecto mucoso. Discussão completa de conduta e diagnóstico diferencial obstétrico.</div>
+        <div class="card-footer">
+          <div class="card-author">
+            <div class="av av-sm">DL</div>
+            Daniel dos Santos Lourenço, M.D.
+          </div>
+          <span class="card-read">Ler artigo →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Artigo 2 -->
+    <a href="https://oasismedicinal.blogspot.com/2025/01/escolha-de-farmacoterapia-na.html" class="article-card" target="_blank" rel="noopener">
+      <div class="card-stripe" style="background: var(--green);"></div>
+      <div class="card-body">
+        <div class="card-top">
+          <span class="tag tag-cardio">Cardiologia</span>
+          <span class="tag tag-cardio">Farmacologia</span>
+          <span class="card-date">Jan 2025</span>
+        </div>
+        <div class="card-title">Escolha de farmacoterapia na hipertensão essencial (primária)</div>
+        <div class="card-excerpt">Revisão baseada em evidências sobre a escolha da classe farmacológica, doseamento e combinação de anti-hipertensivos. Actualização das guidelines ACC/AHA e ESC aplicadas ao contexto clínico moçambicano — quem tratar, quando tratar e como.</div>
+        <div class="card-footer">
+          <div class="card-author">
+            <div class="av av-sm">DL</div>
+            Daniel dos Santos Lourenço, M.D.
+          </div>
+          <span class="card-read">Ler artigo →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- AD IN-CONTENT após 2º artigo -->
+    <div class="ad-unit ad-incontent">
+      <span class="ad-label">Publicidade</span>
+      <!-- AdSense Rectangle 336×280 — substituir após aprovação:
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXX"
+           data-ad-slot="YYYY" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      -->
+      <span>Google AdSense — Rectangle (activo após aprovação)</span>
+    </div>
+
+    <!-- Artigo 3 -->
+    <a href="https://oasismedicinal.blogspot.com/2024/08/fratura-femural-em-criancas-caso-clinico.html" class="article-card" target="_blank" rel="noopener">
+      <div class="card-stripe" style="background: var(--gold);"></div>
+      <div class="card-body">
+        <div class="card-top">
+          <span class="tag tag-casos">Caso Clínico nº 001</span>
+          <span class="tag tag-trauma">Traumatologia</span>
+          <span class="card-date">Ago 2024</span>
+        </div>
+        <div class="card-title">Pré-escolar com fractura femural combinada bilateral</div>
+        <div class="card-excerpt">Pré-escolar de 50 meses (4 anos e 2 meses), vítima de atropelamento por viatura, com fractura bilateral do fémur — um caso clínico inusitado no Serviço de Urgência de Traumatologia de uma unidade sanitária quaternária de Moçambique.</div>
+        <div class="card-footer">
+          <div class="card-author">
+            <div class="av av-sm">DL</div>
+            Daniel dos Santos Lourenço, M.D.
+          </div>
+          <span class="card-read">Ler artigo →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- SPONSORED CONTENT -->
+    <div class="sponsored-card">
+      <span class="sponsored-label">Patrocinado</span>
+      <h4>Formação médica contínua online — Certificada</h4>
+      <p>Cursos de actualização clínica, emergência médica e farmacologia. Acesso flexível, com certificado reconhecido. Parceria disponível — contacte-nos.</p>
+      <a href="mailto:oasismedicinal@gmail.com" class="sponsored-btn">Saber mais →</a>
+    </div>
+
+    <!-- Artigo 4 -->
+    <a href="https://oasismedicinal.blogspot.com/2024/08/hemorragia-pos-parto-conceitos-etiologia-conduta.html" class="article-card" target="_blank" rel="noopener">
+      <div class="card-stripe" style="background: var(--rust);"></div>
+      <div class="card-body">
+        <div class="card-top">
+          <span class="tag tag-obstet">Obstetrícia</span>
+          <span class="card-date">Ago 2024</span>
+        </div>
+        <div class="card-title">Hemorragia Pós-Parto: Um Assassino Conhecido</div>
+        <div class="card-excerpt">Responsável por 20% das mortes maternas em regiões em desenvolvimento. Na África Subsaariana, o peso é ainda mais pesado. Revisão dos conceitos, etiologia e conduta actualizada segundo a definição ACOG 2017 e o contexto africano.</div>
+        <div class="card-footer">
+          <div class="card-author">
+            <div class="av av-sm">DL</div>
+            Daniel dos Santos Lourenço, M.D.
+          </div>
+          <span class="card-read">Ler artigo →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Artigo 5 -->
+    <a href="https://oasismedicinal.blogspot.com/2024/07/a-inveja-e-dor-quais-sao-as-possiveis.html" class="article-card" target="_blank" rel="noopener">
+      <div class="card-stripe" style="background: var(--purple);"></div>
+      <div class="card-body">
+        <div class="card-top">
+          <span class="tag tag-curiosidade">Curiosidades</span>
+          <span class="tag tag-psico">Psicologia</span>
+          <span class="card-date">Jul 2024</span>
+        </div>
+        <div class="card-title">A inveja e a dor: quais são as possíveis associações?</div>
+        <div class="card-excerpt">Bertrand Russell apelidou a inveja de "a pior faceta da natureza humana". Mas poderá provocar dor física? Revisão da literatura científica sobre as associações neurológicas entre inveja e nocicepção — uma leitura surpreendente.</div>
+        <div class="card-footer">
+          <div class="card-author">
+            <div class="av av-sm">DL</div>
+            Daniel dos Santos Lourenço, M.D.
+          </div>
+          <span class="card-read">Ler artigo →</span>
+        </div>
+      </div>
+    </a>
+
+  </div><!-- /articles -->
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <!-- AD rectangle topo -->
+    <div class="ad-unit ad-rect">
+      <span class="ad-label">Publicidade</span>
+      <!-- AdSense 300×250 — substituir após aprovação:
+      <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px"
+           data-ad-client="ca-pub-XXXX" data-ad-slot="YYYY"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      -->
+      <span>AdSense 300×250<br>Posição de maior rendimento</span>
+    </div>
+
+    <!-- Sobre o autor -->
+    <div class="sidebar-section about-card" id="sobre">
+      <div class="about-img">DL</div>
+      <div class="about-name">Daniel dos Santos Lourenço, M.D.</div>
+      <div class="about-role">Médico · Clínica Geral · Pemba</div>
+      <div class="about-bio">Graduado pela FCS-UniLúrio. Cabo Delgado, Moçambique. Comunicação em Português, Inglês, Francês e Emakhuwa-Emeetho.</div>
+    </div>
+
+    <!-- Promo newsletter -->
+    <div class="promo-box">
+      <div class="promo-icon">📬</div>
+      <h4>Receba novos artigos</h4>
+      <p>Actualização clínica e casos clínicos enviados directamente para o seu email. Gratuito e sem spam.</p>
+      <a href="#newsletter">Subscrever newsletter →</a>
+    </div>
+
+    <!-- Casos clínicos -->
+    <div class="sidebar-section">
+      <div class="sidebar-title">Casos Clínicos</div>
+      <ul class="sidebar-list">
+        <li>
+          <a href="https://oasismedicinal.blogspot.com/2025/01/caso-002-um-parto-distocico-evitavel.html" target="_blank" rel="noopener">
+            Caso 002: Parto distócico evitável
+            <span class="slabel">Obstetrícia · Jan 2025</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://oasismedicinal.blogspot.com/2024/08/fratura-femural-em-criancas-caso-clinico.html" target="_blank" rel="noopener">
+            Caso 001: Fractura femural bilateral em pré-escolar
+            <span class="slabel">Traumatologia · Ago 2024</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- AD rectangle meio -->
+    <div class="ad-unit ad-rect">
+      <span class="ad-label">Publicidade</span>
+      <span>AdSense 300×250<br>Segunda posição sidebar</span>
+    </div>
+
+    <!-- Especialidades -->
+    <div class="sidebar-section" id="especialidades">
+      <div class="sidebar-title">Por Especialidade</div>
+      <div class="tag-cloud">
+        <a href="#" class="tc-tag">Cardiologia</a>
+        <a href="#" class="tc-tag">Obstetrícia</a>
+        <a href="#" class="tc-tag">Traumatologia</a>
+        <a href="#" class="tc-tag">Psicologia</a>
+        <a href="#" class="tc-tag">Farmacologia</a>
+        <a href="#" class="tc-tag">Curiosidades</a>
+      </div>
+    </div>
+
+    <!-- Aviso médico -->
+    <div class="sidebar-section" style="background: var(--green-pale);">
+      <p style="font-size: 12px; color: var(--text-muted); line-height: 1.65;">
+        ⚠️ Este portal é <strong>informativo e educativo</strong>. Não substitui a consulta médica presencial. Em caso de dúvida de saúde, consulte sempre o seu médico.
+      </p>
+    </div>
+
+  </aside>
+</div>
+
+<!-- MONETISATION ROADMAP -->
+<section class="monetisation-section">
+  <div class="mon-inner">
+    <div class="section-label" style="color: #a8e6bf;">Estratégia de Crescimento</div>
+    <div class="mon-title">Como o Oásis Medicinal vai crescer e gerar receita</div>
+    <div class="mon-sub">Modelo progressivo — começa com anúncios e cresce com o tráfego para fontes de rendimento mais rentáveis.</div>
+    <div class="mon-grid">
+      <div class="mon-card">
+        <div class="mon-icon">📰</div>
+        <h4>Google AdSense</h4>
+        <p>Anúncios automáticos e contextuais. Rendimento proporcional às visitas. Activação em 30 minutos após aprovação do AdSense.</p>
+        <span class="mon-badge badge-active">✓ Activar primeiro</span>
+      </div>
+      <div class="mon-card">
+        <div class="mon-icon">🤝</div>
+        <h4>Conteúdo Patrocinado</h4>
+        <p>Artigos ou banners de farmacêuticas, livros médicos e plataformas de formação contínua. Negociação directa — maior margem.</p>
+        <span class="mon-badge badge-medium">A partir de 1 000 visitas/mês</span>
+      </div>
+      <div class="mon-card">
+        <div class="mon-icon">🔗</div>
+        <h4>Marketing de Afiliados</h4>
+        <p>Comissão por venda de livros médicos (Amazon), cursos online (Sanar, Coursera) e equipamentos clínicos recomendados nos artigos.</p>
+        <span class="mon-badge badge-medium">A partir de 500 visitas/mês</span>
+      </div>
+      <div class="mon-card">
+        <div class="mon-icon">📧</div>
+        <h4>Newsletter Premium</h4>
+        <p>Conteúdo exclusivo para subscritores pagos — casos aprofundados, resumos de guidelines. Plataforma: Substack (gratuito para começar).</p>
+        <span class="mon-badge badge-soon">Fase 2 — 5 000 subscritores</span>
+      </div>
+      <div class="mon-card">
+        <div class="mon-icon">📚</div>
+        <h4>E-books e Guias Clínicos</h4>
+        <p>Compilação dos casos clínicos em PDF premium. Guias de bolso por especialidade vendidos via Gumroad ou directamente no site.</p>
+        <span class="mon-badge badge-soon">Fase 2 — 10 artigos/área</span>
+      </div>
+      <div class="mon-card">
+        <div class="mon-icon">🎓</div>
+        <h4>Webinars e Consultoria</h4>
+        <p>Sessões de actualização médica online pagas. Potencial de parceria com instituições de saúde, ONG e universidades de Moçambique.</p>
+        <span class="mon-badge badge-soon">Fase 3 — comunidade activa</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PATIENT EDUCATION -->
+<section class="patient-section" id="pacientes">
+  <div class="patient-inner">
+    <div class="section-label">Educação para a Saúde</div>
+    <div class="section-title">Para o Paciente e Família</div>
+    <div class="patient-grid">
+      <a href="#" class="patient-card">
+        <div class="pc-icon">🩸</div>
+        <div class="pc-tag">Doenças Crónicas</div>
+        <div class="pc-title">Hipertensão arterial: o que é e como viver melhor com ela</div>
+      </a>
+      <a href="#" class="patient-card">
+        <div class="pc-icon">🤰</div>
+        <div class="pc-tag">Saúde Materna</div>
+        <div class="pc-title">Sinais de alerta no período pós-parto que toda mulher deve conhecer</div>
+      </a>
+      <a href="#" class="patient-card">
+        <div class="pc-icon">💊</div>
+        <div class="pc-tag">Medicação</div>
+        <div class="pc-title">Antibióticos: quando devem ser usados — e quando não devem</div>
+      </a>
+      <a href="#" class="patient-card">
+        <div class="pc-icon">🦟</div>
+        <div class="pc-tag">Infecções</div>
+        <div class="pc-title">Malária em Moçambique: prevenção e quando procurar ajuda médica</div>
+      </a>
+      <a href="#" class="patient-card">
+        <div class="pc-icon">🧘</div>
+        <div class="pc-tag">Saúde Mental</div>
+        <div class="pc-title">Saúde mental em tempos difíceis: estratégias práticas e acessíveis</div>
+      </a>
+      <a href="#" class="patient-card">
+        <div class="pc-icon">🍽️</div>
+        <div class="pc-tag">Nutrição</div>
+        <div class="pc-title">Alimentação saudável com recursos limitados — guia prático</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="nl" id="newsletter">
+  <h2>Receba novos artigos por email</h2>
+  <p>Actualização clínica, casos e educação para a saúde — directamente na sua caixa de entrada. Gratuito e sem spam.</p>
+  <!-- Substituir pelo formulário do Mailchimp ou Substack após configuração -->
+  <div class="nl-form">
+    <input type="email" placeholder="O seu endereço de email" aria-label="Email para newsletter">
+    <button type="button">Subscrever</button>
+  </div>
+  <div class="nl-note">Sem spam. Pode cancelar a qualquer momento.</div>
+  <div class="disclaimer">
+    ⚠️ O conteúdo deste portal é de carácter informativo e educativo e não substitui a consulta médica presencial. Em caso de emergência, procure imediatamente cuidados médicos.
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">🌿 Oásis Medicinal</div>
+        <p>Portal de comunicação médica criado por Daniel dos Santos Lourenço, M.D. Casos clínicos, actualização médica e educação para a saúde — desde Pemba, para Moçambique e o mundo lusófono.</p>
+        <div class="footer-motto">"Para que se possa vencer os infortúnios, é importante, acima de tudo, que se tenha informação."</div>
+      </div>
+      <div class="footer-col">
+        <h4>Conteúdos</h4>
+        <a href="#artigos">Todos os Artigos</a>
+        <a href="#casos">Casos Clínicos</a>
+        <a href="#especialidades">Por Especialidade</a>
+        <a href="#pacientes">Para Pacientes</a>
+        <a href="https://oasismedicinal.blogspot.com" target="_blank" rel="noopener">Blogger (versão original)</a>
+      </div>
+      <div class="footer-col">
+        <h4>Portal</h4>
+        <a href="#sobre">Sobre o Autor</a>
+        <a href="#newsletter">Newsletter</a>
+        <a href="mailto:oasismedicinal@gmail.com">Contacto</a>
+        <a href="mailto:oasismedicinal@gmail.com">Publicidade / Parcerias</a>
+        <a href="#">Política de Privacidade</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Oásis Medicinal · Daniel dos Santos Lourenço, M.D. · Todos os direitos reservados</span>
+      <span>🇲🇿 Pemba, Cabo Delgado, Moçambique</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Smooth active state for category buttons
+  document.querySelectorAll('.cat-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
